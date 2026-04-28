@@ -1,0 +1,146 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+  background-color: #f4f6f9;
+  color: #222;
+}
+
+/* Header */
+header {
+  background-color: #0e0505;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ padding: 15px 60px;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+header h1 a {
+  text-decoration: none;
+  color: white;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+header nav ul li a:hover {
+  color: #ffd32a;
+}
+
+.login-btn {
+  background-color: #ffd32a;
+  color: #003366;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login-btn:hover {
+  background-color: #ffb142;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-top: 65px;
+  padding: 250px 250px 250px 250px;
+  background: url('https://www.jamfal.com/k/download/screen/2020/202007/kashipara.com_screenshot-2020-07-04-09-4.png') center/cover no-repeat;
+  color: white;
+}
+
+.hero h2 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 25px;
+}
+
+.hero button {
+  background-color: #ffd32a;
+  color: #003366;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hero button:hover {
+  background-color: #ffb142;
+}
+
+/* Features Section */
+.features {
+  background-color: #fff;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 2em;
+  color: #003366;
+  margin-bottom: 40px;
+}
+
+.feature-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  background-color: #f1f2f6;
+  width: 280px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background-color: #dfe6e9;
+}
+
+.card h3 {
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #555;
+}
+
+/* Footer */
+footer {
+  background-color: #090606;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
+}

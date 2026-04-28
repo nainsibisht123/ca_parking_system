@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Car Parking System</title>
+  <link rel="stylesheet" href="contact.css">
+
+  <style>
+    .error {
+      color: red;
+      font-size: 13px;
+      margin-top: -6px;
+      margin-bottom: 8px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Car Parking Management System </h1>
+  <nav>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="booking_start.php">Booking</a></li>
+      <li><a href="slot.html">Slots</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="contact-container">
+  <h2>Contact Us</h2>
+  <p>If you have any questions, feedback, or need assistance with booking, feel free to reach out to us.</p>
+  
+  <form id="contactForm" action="contact.php" method="post">
+    
+    <label>Name:</label>
+    <input name="name" id="name" type="text" required placeholder="Enter your name">
+    <div id="nameError" class="error">Name must contain only letters and spaces.</div>
+
+    <label>Email:</label>
+    <input name="email" id="email" type="email" required placeholder="Enter your email">
+    <div id="emailError" class="error">Please enter a valid email address.</div>
+
+    <label>Message:</label>
+    <textarea name="message" id="message" rows="5" required placeholder="Write your message"></textarea>
+    <div id="msgError" class="error">Message must be at least 5 characters.</div>
+
+    <button type="submit" name="submit" value="submit">Send Message</button>
+  </form>
+</div>
+
+<footer>
+  © 2025 Car Parking Management System | All Rights Reserved
+</footer>
+
+<script>
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const msgInput = document.getElementById("message");
+
+  const nameError = document.getElementById("nameError");
+  const emailError = document.getElementById("emailError");
+  const msgError = document.getElementById("msgError");
+
+  /* ---------------------------
+     BLOCK NUMBERS IN NAME FIELD
+  ----------------------------*/
+  nameInput.addEventListener("keypress", function (e) {
+    const char = String.fromCharCode(e.which);
+
+    // Allow only alphabets and space
+    if (!/^[A-Za-z ]$/.test(char)) {
+      e.preventDefault(); // Stop number or special character from typing
+    }
+  });
+
+  // Name validation (only A-Z and space)
+  nameInput.addEventListener("input", () => {
+    const regex = /^[A-Za-z ]+$/;
+    if (!regex.test(nameInput.value.trim())) {
+      nameError.style.display = "block";
+    } else {
+      nameError.style.display = "none";
+    }
+  });
+
+  // Email validation
+  emailInput.addEventListener("input", () => {
+    const regex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+    if (!regex.test(emailInput.value.trim())) {
+      emailError.style.display = "block";
+    } else {
+      emailError.style.display = "none";
+    }
+  });
+
+  // Message validation (min 5 chars)
+  msgInput.addEventListener("input", () => {
+    if (msgInput.value.trim().length < 5) {
+      msgError.style.display = "block";
+    } else {
+      msgError.style.display = "none";
+    }
+  });
+
+  // Prevent form submit if errors exist
+  document.getElementById("contactForm").addEventListener("submit", (e) => {
+    if (
+      nameError.style.display === "block" ||
+      emailError.style.display === "block" ||
+      msgError.style.display === "block"
+    ) {
+      e.preventDefault();
+      alert("Please fix the errors before submitting.");
+    }
+  });
+</script>
+
+
+</body>
+</html>

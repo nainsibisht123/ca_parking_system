@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Parking - Login / Signup</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+  <div class="card">
+    <h1>Car Parking System</h1>
+
+    <!-- LOGIN FORM -->
+    <div id="loginForm">
+      <h2>Login</h2>
+      <form action="login.php" method="POST">
+        <input name="user_name" type="text" placeholder="Enter Username" required>
+        <input name="password" type="password" placeholder="Enter Password" required>
+        <button type="submit" name="login">Login</button>
+      </form>
+      <p>Don't have an account? <span class="link" onclick="showSignup()">Sign Up</span></p>
+    </div>
+
+    <!-- SIGNUP FORM -->
+    <div id="signupForm" class="hidden">
+      <h2>Sign Up</h2>
+      <form action="signup.php" method="POST">
+        <input name="user_name" type="text" placeholder="Create Username" required>
+        <input name="password" type="password" placeholder="Create Password (min 6 chars)" required>
+        <button type="submit" name="signup">Sign Up</button>
+      </form>
+      <p>Already have an account? <span class="link" onclick="showLogin()">Login</span></p>
+    </div>
+  </div>
+
+  <script>
+    function showSignup() {
+      document.getElementById('loginForm').classList.add('hidden');
+      document.getElementById('signupForm').classList.remove('hidden');
+    }
+
+    function showLogin() {
+      document.getElementById('signupForm').classList.add('hidden');
+      document.getElementById('loginForm').classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>
