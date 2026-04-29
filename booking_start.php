@@ -163,7 +163,7 @@ pattern="[0-9]{10}" title="Enter valid 10 digit number">
       <option value="Online Payment">Online Payment</option>
     </select>
 
- <button type="submit" class="book-btn" id="bookBtn">Book Slot</button>
+ <button type="button" class="book-btn" id="bookBtn">Book Slot</button>
     <button type="button" class="cancel-btn" onclick="cancelBooking()">Cancel Booking</button>
 
   </form>
@@ -177,6 +177,8 @@ pattern="[0-9]{10}" title="Enter valid 10 digit number">
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 <script>
+
+    const bookBtn = document.getElementById('bookBtn');
 /* ------------------------- VEHICLE NUMBER STRICT CHECK --------------------------- */
 function validateVehicleNumber() {
     let v = document.getElementById("vehicle_number").value;
