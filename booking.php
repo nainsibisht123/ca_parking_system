@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$conn = mysqli_connect("localhost", "root", "", "car_parking_system");
+$conn = mysqli_connect("localhost","IF_username","password","IF_dbname");
 if (!$conn) {
     die("Database Connection Failed: " . mysqli_connect_error());
 }
